@@ -1,0 +1,22 @@
+﻿
+@if (User.Identity.IsAuthenticated)
+{
+    // code if you want to call the OnGetAsync() method in the LogoutModel class
+    <div>
+        Hello @User.Identity.Name
+        <a asp-page="/Account/Logout"> logout</a>
+    </div>
+   
+    // code if you want to call the OnPostAsync() method in the LogoutModel class
+    @*<form method="post" class="form-inline" asp-page="/Account/Logout">
+        Hello @User.Identity.Name
+        <button type="submit" class="ml-2 btn btn-link"> logout</button>
+    </form>*@
+
+}
+else
+{
+    <a asp-page="/Account/Register">Register</a>
+    <a asp-page="/Account/Login">Login</a>
+}
+
